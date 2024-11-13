@@ -18,7 +18,7 @@ exports.typeDefs = gql`
     price: Float!
     onSale: Boolean!
     category: Category
-    reviews: [Review!]!
+    reviews(filter: ReviewFilterInput): [Review!]!
   }
 
   type Category {
@@ -37,5 +37,9 @@ exports.typeDefs = gql`
 
   input ProductFilterInput {
     onSale: Boolean
+  }
+
+  input ReviewFilterInput {
+    minRating: Int
   }
 `;
