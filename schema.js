@@ -8,6 +8,9 @@ exports.typeDefs = gql`
     categories: [Category!]!
     category(id: ID!): Category
   }
+  type Mutation {
+    addCategory(input: addCategoryInput!): Category!
+  }
 
   type Product {
     id: ID!
@@ -41,5 +44,9 @@ exports.typeDefs = gql`
 
   input ReviewFilterInput {
     minRating: Int
+  }
+
+  input addCategoryInput {
+    name: String!
   }
 `;
